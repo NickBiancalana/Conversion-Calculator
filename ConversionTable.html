@@ -1,92 +1,739 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unit Conversion Table</title>
+    <title>Conversion Chart</title>
     <style>
         table {
             width: 100%;
             border-collapse: collapse;
         }
         th, td {
+            padding: 8px 12px;
             border: 1px solid #ddd;
-            padding: 8px;
+            text-align: left;
         }
         th {
             background-color: #f2f2f2;
         }
-        input[type="number"] {
-            width: 100px;
-        }
     </style>
-    <script>
-        function convertToConventional(siValue, factor, conventionalValueId) {
-            const conventionalValue = siValue / factor;
-            document.getElementById(conventionalValueId).innerText = conventionalValue.toFixed(2);
-        }
-    </script>
 </head>
 <body>
 
-    <h2>SI Unit and Conventional Unit Conversion Table</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Test</th>
-                <th>Conventional Unit</th>
-                <th>Conversion Factor</th>
-                <th>SI Unit</th>
-                <th>Reference Range (SI Units)</th>
-                <th>Reference Range (Conventional Units)</th>
-                <th>SI Value</th>
-                <th>Conventional Value</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>albumin</td>
-                <td>g/dL</td>
-                <td>10</td>
-                <td>g/L</td>
-                <td>37–49</td>
-                <td>3.7–4.9</td>
-                <td><input type="number" oninput="convertToConventional(this.value, 10, 'conventional1')"></td>
-                <td id="conventional1">0</td>
-            </tr>
-            <tr>
-                <td>aldosterone</td>
-                <td>ng/dL</td>
-                <td>27.7</td>
-                <td>pmol/L</td>
-                <td>90–720</td>
-                <td>3.25–25.99</td>
-                <td><input type="number" oninput="convertToConventional(this.value, 27.7, 'conventional2')"></td>
-                <td id="conventional2">0</td>
-            </tr>
-            <tr>
-                <td>α1-antitrypsin</td>
-                <td>mg/dL</td>
-                <td>0.01</td>
-                <td>g/L</td>
-                <td>1.1–2.1</td>
-                <td>110–210</td>
-                <td><input type="number" oninput="convertToConventional(this.value, 0.01, 'conventional3')"></td>
-                <td id="conventional3">0</td>
-            </tr>
-            <tr>
-                <td>alanine aminotransferase</td>
-                <td>mg/dL</td>
-                <td>60</td>
-                <td>U/L</td>
-                <td>5–35</td>
-                <td>0.08–0.58</td>
-                <td><input type="number" oninput="convertToConventional(this.value, 60, 'conventional4')"></td>
-                <td id="conventional4">0</td>
-            </tr>
-            <!-- Add more rows as needed -->
-        </tbody>
-    </table>
+<h2>SI to Conventional Unit Conversion</h2>
+<p>Type the SI value into the input field and the conventional value will be calculated automatically.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Test</th>
+            <th>Conventional Unit</th>
+            <th>Conversion Factor</th>
+            <th>SI Unit</th>
+            <th>Reference Range (SI Units)</th>
+            <th>Reference Range (Conventional Units)</th>
+            <th>SI Value</th>
+            <th>Conventional Value</th>
+        </tr>
+    </thead>
+    <tbody>
+    
+    <tr>
+        <td>albumin</td>
+        <td>g/dL</td>
+        <td>10</td>
+        <td>g/L</td>
+        <td>37–49</td>
+        <td>3.7–4.9</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 10, 'conv_value_1')"></td>
+        <td id="conv_value_1">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>aldosterone</td>
+        <td>ng/dL</td>
+        <td>27.7</td>
+        <td>pmol/L</td>
+        <td>90–720</td>
+        <td>3.25–25.99</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 27.7, 'conv_value_2')"></td>
+        <td id="conv_value_2">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>α1-antitrypsin</td>
+        <td>mg/dL</td>
+        <td>0.01</td>
+        <td>g/L</td>
+        <td>1.1–2.1</td>
+        <td>110–210</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.01, 'conv_value_3')"></td>
+        <td id="conv_value_3">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>alanine aminotransferase</td>
+        <td>mg/dL</td>
+        <td>60</td>
+        <td>U/L</td>
+        <td>5–35</td>
+        <td>0.08–0.58</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 60, 'conv_value_4')"></td>
+        <td id="conv_value_4">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>aspartate aminotransferase</td>
+        <td>mg/dL</td>
+        <td>60</td>
+        <td>U/L</td>
+        <td>1–31</td>
+        <td>0.02–0.52</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 60, 'conv_value_5')"></td>
+        <td id="conv_value_5">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>alkaline phosphatase</td>
+        <td>mg/dL</td>
+        <td>60</td>
+        <td>U/L</td>
+        <td>45–105</td>
+        <td>0.75–1.75</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 60, 'conv_value_6')"></td>
+        <td id="conv_value_6">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>bicarbonate</td>
+        <td>mEq/L</td>
+        <td>1</td>
+        <td>mmol/L</td>
+        <td>20–28</td>
+        <td>20–28</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 1, 'conv_value_7')"></td>
+        <td id="conv_value_7">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>bilirubin (total)</td>
+        <td>mg/dL</td>
+        <td>17.1</td>
+        <td>µmol/L</td>
+        <td>1–22</td>
+        <td>0.06–1.29</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 17.1, 'conv_value_8')"></td>
+        <td id="conv_value_8">0.00</td>
+    </tr>
+    
+    <tr>
+        <td> bilirubin (conjugated)</td>
+        <td>mg/dL</td>
+        <td>17.1</td>
+        <td>µmol/L</td>
+        <td><3.4</td>
+        <td><0.20</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 17.1, 'conv_value_9')"></td>
+        <td id="conv_value_9">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>C-complement</td>
+        <td>mg/mL</td>
+        <td>10</td>
+        <td>mg/dL</td>
+        <td>C3: 65–190</td>
+        <td>C3: 6.5–19.0</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 10, 'conv_value_10')"></td>
+        <td id="conv_value_10">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>C-peptide</td>
+        <td>ng/mL</td>
+        <td>333</td>
+        <td>pmol/L</td>
+        <td>180–360</td>
+        <td>0.54–1.08</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 333, 'conv_value_12')"></td>
+        <td id="conv_value_12">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>calcitonin</td>
+        <td>pg/mL</td>
+        <td>3.418</td>
+        <td>pmol/L</td>
+        <td><27</td>
+        <td><7.90</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 3.418, 'conv_value_13')"></td>
+        <td id="conv_value_13">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>calcium (adjusted)</td>
+        <td>mg/dL</td>
+        <td>0.25</td>
+        <td>mmol/L</td>
+        <td>2.20–2.60</td>
+        <td>8.80–10.40</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.25, 'conv_value_14')"></td>
+        <td id="conv_value_14">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>calcium (ionised)</td>
+        <td>mEq/L</td>
+        <td>0.5</td>
+        <td>mmol/L</td>
+        <td>1.13–1.32</td>
+        <td>2.26–2.64</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.5, 'conv_value_15')"></td>
+        <td id="conv_value_15">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>caeruloplasmin</td>
+        <td>mg/dL</td>
+        <td>10</td>
+        <td>mg/L</td>
+        <td>200–350</td>
+        <td>20.0–35.0</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 10, 'conv_value_16')"></td>
+        <td id="conv_value_16">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>chloride</td>
+        <td>mEq/L</td>
+        <td>1</td>
+        <td>mmol/L</td>
+        <td>95–107</td>
+        <td>95–107</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 1, 'conv_value_17')"></td>
+        <td id="conv_value_17">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>cholesterol</td>
+        <td>mg/dL</td>
+        <td>0.0259</td>
+        <td>mmol/L</td>
+        <td><5.2</td>
+        <td><201</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.0259, 'conv_value_18')"></td>
+        <td id="conv_value_18">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>HDL cholesterol</td>
+        <td>mg/dL</td>
+        <td>0.0259</td>
+        <td>mmol/L</td>
+        <td>>1.55</td>
+        <td>>59.85</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.0259, 'conv_value_19')"></td>
+        <td id="conv_value_19">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>non-HDL cholesterol</td>
+        <td>mg/dL</td>
+        <td>0.0259</td>
+        <td>mmol/L</td>
+        <td><3.36</td>
+        <td><129.73</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.0259, 'conv_value_20')"></td>
+        <td id="conv_value_20">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>copper</td>
+        <td>µg/dL</td>
+        <td>0.157</td>
+        <td>µmol/L</td>
+        <td>12–26</td>
+        <td>76.4–165.6</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.157, 'conv_value_21')"></td>
+        <td id="conv_value_21">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>corticotropin/ ACTH</td>
+        <td>pg/mL</td>
+        <td>0.22</td>
+        <td>pmol/L</td>
+        <td>3.3–15.4</td>
+        <td>15.0–70.0</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.22, 'conv_value_22')"></td>
+        <td id="conv_value_22">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>cortisol</td>
+        <td>µg/dL</td>
+        <td>27.59</td>
+        <td>nmol/L</td>
+        <td>09.00 h: 320–700</td>
+        <td>09.00 h: 11.6–25.4</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 27.59, 'conv_value_23')"></td>
+        <td id="conv_value_23">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>creatinine</td>
+        <td>mg/dL</td>
+        <td>88.4</td>
+        <td>µmol/L</td>
+        <td>60–110</td>
+        <td>0.68–1.24</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 88.4, 'conv_value_24')"></td>
+        <td id="conv_value_24">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>CRP</td>
+        <td>μg/mL</td>
+        <td>1</td>
+        <td>mg/L</td>
+        <td>0-5</td>
+        <td>0–5</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 1, 'conv_value_25')"></td>
+        <td id="conv_value_25">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>dehydroepiandrosterone (DHEA)</td>
+        <td>ng/mL</td>
+        <td>3.47</td>
+        <td>nmol/L</td>
+        <td>7–31</td>
+        <td>2.02–8.93</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 3.47, 'conv_value_26')"></td>
+        <td id="conv_value_26">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>ferritin</td>
+        <td>ng/mL</td>
+        <td>1</td>
+        <td>µg/L</td>
+        <td>15–300</td>
+        <td>15–300</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 1, 'conv_value_27')"></td>
+        <td id="conv_value_27">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>α-fetoprotein</td>
+        <td>ng/mL</td>
+        <td>1</td>
+        <td>kU/L</td>
+        <td><10</td>
+        <td><10</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 1, 'conv_value_28')"></td>
+        <td id="conv_value_28">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>fibrinogen</td>
+        <td>mg/dL</td>
+        <td>0.01</td>
+        <td>g/L</td>
+        <td>1.8–5.4</td>
+        <td>180–540</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.01, 'conv_value_29')"></td>
+        <td id="conv_value_29">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>gamma glutamyl transferase</td>
+        <td>mg/dL</td>
+        <td>60</td>
+        <td>U/L</td>
+        <td>male: <50</td>
+        <td>male: <0.83</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 60, 'conv_value_30')"></td>
+        <td id="conv_value_30">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>glucose (fasting)</td>
+        <td>mg/dL</td>
+        <td>0.0555</td>
+        <td>mmol/L</td>
+        <td>3.0–6.0</td>
+        <td>54.1–108.1</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.0555, 'conv_value_32')"></td>
+        <td id="conv_value_32">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>glucose (random)</td>
+        <td>mg/dL</td>
+        <td>0.0555</td>
+        <td>mmol/L</td>
+        <td>3.0–11.0</td>
+        <td>54.1–198.2</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.0555, 'conv_value_33')"></td>
+        <td id="conv_value_33">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>HbA1c</td>
+        <td>% of total Hb</td>
+        <td>HbA1c (mmol/mol) / 10.929] + 2.15</td>
+        <td>mmol/mol</td>
+        <td>20–42</td>
+        <td>3.98–5.99</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 10.929, 'conv_value_34')"></td>
+        <td id="conv_value_34">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>haematocrit</td>
+        <td>%</td>
+        <td>0.01</td>
+        <td>proportion of 1.0</td>
+        <td>male: 0.40–0.52</td>
+        <td>male: 40–52</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.01, 'conv_value_35')"></td>
+        <td id="conv_value_35">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>haemoglobin</td>
+        <td>g/dL</td>
+        <td>10</td>
+        <td>g/L</td>
+        <td>male: 130–180</td>
+        <td>male: 13.0–18.0</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 10, 'conv_value_37')"></td>
+        <td id="conv_value_37">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>insulin</td>
+        <td>mIU/mL</td>
+        <td>6.945</td>
+        <td>pmol/L</td>
+        <td>fasting: <186</td>
+        <td>fasting: <26.78</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 6.945, 'conv_value_39')"></td>
+        <td id="conv_value_39">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>iron </td>
+        <td>µg/dL</td>
+        <td>0.179</td>
+        <td>µmol/L</td>
+        <td>12–30</td>
+        <td>67–168</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.179, 'conv_value_40')"></td>
+        <td id="conv_value_40">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>iron binding capacity</td>
+        <td>µg/dL</td>
+        <td>0.179</td>
+        <td>µmol/L</td>
+        <td>45–75</td>
+        <td>251–419</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.179, 'conv_value_41')"></td>
+        <td id="conv_value_41">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>lactate</td>
+        <td>mg/dL</td>
+        <td>0.111</td>
+        <td>mmol/L</td>
+        <td>0.6–1.8</td>
+        <td>5.41–16.22</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.111, 'conv_value_42')"></td>
+        <td id="conv_value_42">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>lead</td>
+        <td>µg/dL</td>
+        <td>0.0483</td>
+        <td>µmol/L</td>
+        <td><0.5</td>
+        <td><10.35</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.0483, 'conv_value_43')"></td>
+        <td id="conv_value_43">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>lithium</td>
+        <td>mEq/L</td>
+        <td>1</td>
+        <td>mmol/L</td>
+        <td>0.5–1.2</td>
+        <td>0.5–1.2</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 1, 'conv_value_44')"></td>
+        <td id="conv_value_44">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>magnesium</td>
+        <td>mg/L</td>
+        <td>0.411</td>
+        <td>mmol/L</td>
+        <td>0.75–1.05</td>
+        <td>1.82–2.55</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.411, 'conv_value_45')"></td>
+        <td id="conv_value_45">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>oestradiol</td>
+        <td>pg/dL</td>
+        <td>3.671</td>
+        <td>pmol/L</td>
+        <td>male: <180</td>
+        <td>male: <49.0</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 3.671, 'conv_value_46')"></td>
+        <td id="conv_value_46">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>parathyroid hormone (intact)</td>
+        <td>pmol/L</td>
+        <td>0.106</td>
+        <td>ng/L</td>
+        <td>15-65</td>
+        <td>141.51–613.21</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.106, 'conv_value_48')"></td>
+        <td id="conv_value_48">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>phosphate</td>
+        <td>mg/dL</td>
+        <td>0.323</td>
+        <td>mmol/L</td>
+        <td>0.80–1.45</td>
+        <td>2.48–4.49</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.323, 'conv_value_49')"></td>
+        <td id="conv_value_49">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>potassium</td>
+        <td>mEq/L</td>
+        <td>1</td>
+        <td>mmol/L</td>
+        <td>3.5–4.9</td>
+        <td>3.5–4.9</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 1, 'conv_value_50')"></td>
+        <td id="conv_value_50">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>progesterone</td>
+        <td>ng/mL</td>
+        <td>3.18</td>
+        <td>nmol/L</td>
+        <td>male: <6</td>
+        <td>male: <1.89</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 3.18, 'conv_value_51')"></td>
+        <td id="conv_value_51">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>prolactin</td>
+        <td>µg/L</td>
+        <td>21.2</td>
+        <td>mIU/L</td>
+        <td>male: 100–360</td>
+        <td>male: 4.7–17.0</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 21.2, 'conv_value_53')"></td>
+        <td id="conv_value_53">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>prostate-specific antigen (PSA)</td>
+        <td>ng/mL</td>
+        <td>1</td>
+        <td>µg/L</td>
+        <td>under 40 yrs: <2.0</td>
+        <td>under 40 yrs: <2.0</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 1, 'conv_value_55')"></td>
+        <td id="conv_value_55">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>total protein </td>
+        <td>g/dL</td>
+        <td>10</td>
+        <td>g/L</td>
+        <td>61–76</td>
+        <td>6.1–7.6</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 10, 'conv_value_57')"></td>
+        <td id="conv_value_57">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>renin concentration</td>
+        <td>mU/L</td>
+        <td>1</td>
+        <td>mIU/L</td>
+        <td>5.4–60.0</td>
+        <td>5.4–60.0</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 1, 'conv_value_58')"></td>
+        <td id="conv_value_58">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>sodium</td>
+        <td>mEq/L</td>
+        <td>1</td>
+        <td>mmol/L</td>
+        <td>137–144</td>
+        <td>137–144</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 1, 'conv_value_59')"></td>
+        <td id="conv_value_59">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>testosterone (total)</td>
+        <td>ng/dL</td>
+        <td>0.0347</td>
+        <td>nmol/L</td>
+        <td>male: 9.0–35.0</td>
+        <td>male: 259–1009</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.0347, 'conv_value_60')"></td>
+        <td id="conv_value_60">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>free T3</td>
+        <td>pg/dL</td>
+        <td>0.0154</td>
+        <td>pmol/L</td>
+        <td>3.0–7.0</td>
+        <td>194.8–454.5</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.0154, 'conv_value_62')"></td>
+        <td id="conv_value_62">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>total T3</td>
+        <td>ng/dL</td>
+        <td>0.0154</td>
+        <td>nmol/L</td>
+        <td>1.07–3.18</td>
+        <td>69.5–206.5</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.0154, 'conv_value_63')"></td>
+        <td id="conv_value_63">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>free T4</td>
+        <td>ng/dL</td>
+        <td>12.87</td>
+        <td>pmol/L</td>
+        <td>10.0–22.0</td>
+        <td>0.78–1.71</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 12.87, 'conv_value_64')"></td>
+        <td id="conv_value_64">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>total T4</td>
+        <td>µg/dL</td>
+        <td>12.87</td>
+        <td>nmol/L</td>
+        <td>58–174</td>
+        <td>4.51–13.52</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 12.87, 'conv_value_65')"></td>
+        <td id="conv_value_65">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>transferrin</td>
+        <td>mg/dL</td>
+        <td>0.01</td>
+        <td>g/L</td>
+        <td>2.0–4.0</td>
+        <td>200–400</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.01, 'conv_value_66')"></td>
+        <td id="conv_value_66">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>triglycerides (fasting)</td>
+        <td>mg/dL</td>
+        <td>0.0113</td>
+        <td>mmol/L</td>
+        <td>0.45–2.30</td>
+        <td>39.8–203.5</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.0113, 'conv_value_67')"></td>
+        <td id="conv_value_67">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>troponin I</td>
+        <td>ng/mL</td>
+        <td>10</td>
+        <td>ng/L</td>
+        <td>male: <34</td>
+        <td>male: <3.4</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 10, 'conv_value_68')"></td>
+        <td id="conv_value_68">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>troponin T</td>
+        <td>ng/mL</td>
+        <td>10</td>
+        <td>ng/L</td>
+        <td>male: <14</td>
+        <td>male: <1.4</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 10, 'conv_value_70')"></td>
+        <td id="conv_value_70">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>urea</td>
+        <td>mg/dL</td>
+        <td>0.0357</td>
+        <td>mmol/L</td>
+        <td>2.5–7.0</td>
+        <td>70–196</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 0.0357, 'conv_value_72')"></td>
+        <td id="conv_value_72">0.00</td>
+    </tr>
+    
+    <tr>
+        <td>vitamin B12</td>
+        <td>ng/mL</td>
+        <td>1000</td>
+        <td>ng/L</td>
+        <td>160–760</td>
+        <td>0.16–0.76</td>
+        <td><input type="number" oninput="convertSIToConventional(this.value, 1000, 'conv_value_73')"></td>
+        <td id="conv_value_73">0.00</td>
+    </tr>
+    
+    </tbody>
+</table>
+
+<script>
+    function convertSIToConventional(siValue, conversionFactor, outputId) {
+        let result = siValue / conversionFactor;
+        if (outputId === 'conv_value_34') {
+            result += 2.15;
+        }
+        document.getElementById(outputId).innerText = result.toFixed(2);
+    }
+    </script>
 
 </body>
 </html>
