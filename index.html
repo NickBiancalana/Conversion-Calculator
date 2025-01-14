@@ -63,7 +63,7 @@
     </tr>
     
     <tr>
-        <td>α1-antitrypsin</td>
+        <td>α<sub>1</sub>-antitrypsin</td>
         <td>mg/dL</td>
         <td>0.01</td>
         <td>g/L</td>
@@ -76,7 +76,7 @@
     <tr>
         <td>alanine aminotransferase</td>
         <td>mg/dL</td>
-        <td>60</td>
+        <td>60.0</td>
         <td>U/L</td>
         <td>5–35</td>
         <td>0.08–0.58</td>
@@ -87,7 +87,7 @@
     <tr>
         <td>aspartate aminotransferase</td>
         <td>mg/dL</td>
-        <td>60</td>
+        <td>60.0</td>
         <td>U/L</td>
         <td>1–31</td>
         <td>0.02–0.52</td>
@@ -98,7 +98,7 @@
     <tr>
         <td>alkaline phosphatase</td>
         <td>mg/dL</td>
-        <td>60</td>
+        <td>60.0</td>
         <td>U/L</td>
         <td>45–105</td>
         <td>0.75–1.75</td>
@@ -109,7 +109,7 @@
     <tr>
         <td>bicarbonate</td>
         <td>mEq/L</td>
-        <td>1</td>
+        <td>1.0</td>
         <td>mmol/L</td>
         <td>20–28</td>
         <td>20–28</td>
@@ -142,7 +142,7 @@
     <tr>
         <td>C-complement</td>
         <td>mg/mL</td>
-        <td>10</td>
+        <td>10.0</td>
         <td>mg/dL</td>
         <td>C3: 65–190</td>
         <td>C3: 6.5–19.0</td>
@@ -208,7 +208,7 @@
     <tr>
         <td>chloride</td>
         <td>mEq/L</td>
-        <td>1</td>
+        <td>1.0</td>
         <td>mmol/L</td>
         <td>95–107</td>
         <td>95–107</td>
@@ -298,7 +298,7 @@
         <td>μg/mL</td>
         <td>1</td>
         <td>mg/L</td>
-        <td>0-5</td>
+        <td>0–5</td>
         <td>0–5</td>
         <td><input type="number" oninput="convertSIToConventional(this.value, 1, 'conv_value_25')"></td>
         <td id="conv_value_25">0.00</td>
@@ -329,7 +329,7 @@
     <tr>
         <td>α-fetoprotein</td>
         <td>ng/mL</td>
-        <td>1</td>
+        <td>1.0</td>
         <td>kU/L</td>
         <td><10</td>
         <td><10</td>
@@ -353,8 +353,8 @@
         <td>mg/dL</td>
         <td>60</td>
         <td>U/L</td>
-        <td>male: <50</td>
-        <td>male: <0.83</td>
+        <td>male: 50 <br> female: 4–35</td>
+        <td>male: 0.83 <br> female 0.07 -0.58</td>
         <td><input type="number" oninput="convertSIToConventional(this.value, 60, 'conv_value_30')"></td>
         <td id="conv_value_30">0.00</td>
     </tr>
@@ -382,14 +382,14 @@
     </tr>
     
     <tr>
-        <td>HbA1c</td>
+        <td>HbA<sub>1c</sub></td>
         <td>% of total Hb</td>
-        <td>HbA1c (mmol/mol) / 10.929] + 2.15</td>
+        <td>HbA<sub>1c</sub> (%) = [HbA<sub>1c</sub> (mmol/mol) / 10.929] + 2.15</td>
         <td>mmol/mol</td>
         <td>20–42</td>
         <td>3.98–5.99</td>
         <td><input type="number" oninput="convertSIToConventional(this.value, 10.929, 'conv_value_34')"></td>
-        <td id="conv_value_34">0.00</td>
+        <td id="conv_value_34">2.15</td>
     </tr>
     
     <tr>
@@ -397,8 +397,8 @@
         <td>%</td>
         <td>0.01</td>
         <td>proportion of 1.0</td>
-        <td>male: 0.40–0.52</td>
-        <td>male: 40–52</td>
+        <td>male: 0.40–0.52 <br> female: 0.36–0.47</td>
+        <td>male: 40–52 <br> female: 36-47</td>
         <td><input type="number" oninput="convertSIToConventional(this.value, 0.01, 'conv_value_35')"></td>
         <td id="conv_value_35">0.00</td>
     </tr>
@@ -408,8 +408,8 @@
         <td>g/dL</td>
         <td>10</td>
         <td>g/L</td>
-        <td>male: 130–180</td>
-        <td>male: 13.0–18.0</td>
+        <td>male: 130–180 <br> female: 115–165</td>
+        <td>male: 13.0–18.0 <br> female: 11.5-16.5</td>
         <td><input type="number" oninput="convertSIToConventional(this.value, 10, 'conv_value_37')"></td>
         <td id="conv_value_37">0.00</td>
     </tr>
@@ -472,7 +472,7 @@
     <tr>
         <td>lithium</td>
         <td>mEq/L</td>
-        <td>1</td>
+        <td>1.0</td>
         <td>mmol/L</td>
         <td>0.5–1.2</td>
         <td>0.5–1.2</td>
@@ -496,8 +496,8 @@
         <td>pg/dL</td>
         <td>3.671</td>
         <td>pmol/L</td>
-        <td>male: <180</td>
-        <td>male: <49.0</td>
+        <td>male: <180 <br> female (follic): 200–400</td>
+        <td>male: <49.0 <br> female (follic):54.5-109.0</td>
         <td><input type="number" oninput="convertSIToConventional(this.value, 3.671, 'conv_value_46')"></td>
         <td id="conv_value_46">0.00</td>
     </tr>
@@ -507,7 +507,7 @@
         <td>pmol/L</td>
         <td>0.106</td>
         <td>ng/L</td>
-        <td>15-65</td>
+        <td>15–65</td>
         <td>141.51–613.21</td>
         <td><input type="number" oninput="convertSIToConventional(this.value, 0.106, 'conv_value_48')"></td>
         <td id="conv_value_48">0.00</td>
@@ -527,7 +527,7 @@
     <tr>
         <td>potassium</td>
         <td>mEq/L</td>
-        <td>1</td>
+        <td>1.0</td>
         <td>mmol/L</td>
         <td>3.5–4.9</td>
         <td>3.5–4.9</td>
@@ -540,8 +540,8 @@
         <td>ng/mL</td>
         <td>3.18</td>
         <td>nmol/L</td>
-        <td>male: <6</td>
-        <td>male: <1.89</td>
+        <td>male: <6 <br> female (follic): <10</td>
+        <td>male: <1.89 <br> female (follic): <3.14</td>
         <td><input type="number" oninput="convertSIToConventional(this.value, 3.18, 'conv_value_51')"></td>
         <td id="conv_value_51">0.00</td>
     </tr>
@@ -551,8 +551,8 @@
         <td>µg/L</td>
         <td>21.2</td>
         <td>mIU/L</td>
-        <td>male: 100–360</td>
-        <td>male: 4.7–17.0</td>
+        <td>male: 100–360 <br> female: 100–600</td>
+        <td>male: 4.7–17.0 <br> female: 4.7-28.3</td>
         <td><input type="number" oninput="convertSIToConventional(this.value, 21.2, 'conv_value_53')"></td>
         <td id="conv_value_53">0.00</td>
     </tr>
@@ -560,10 +560,10 @@
     <tr>
         <td>prostate-specific antigen (PSA)</td>
         <td>ng/mL</td>
-        <td>1</td>
+        <td>1.</td>
         <td>µg/L</td>
-        <td>under 40 yrs: <2.0</td>
-        <td>under 40 yrs: <2.0</td>
+        <td>under 40 yrs: <2.0 <br> over 40 yrs: <4.0</td>
+        <td>under 40 yrs: <2.0 <br> over 40 yrs: <4.0</td>
         <td><input type="number" oninput="convertSIToConventional(this.value, 1, 'conv_value_55')"></td>
         <td id="conv_value_55">0.00</td>
     </tr>
@@ -582,7 +582,7 @@
     <tr>
         <td>renin concentration</td>
         <td>mU/L</td>
-        <td>1</td>
+        <td>1.0</td>
         <td>mIU/L</td>
         <td>5.4–60.0</td>
         <td>5.4–60.0</td>
@@ -593,7 +593,7 @@
     <tr>
         <td>sodium</td>
         <td>mEq/L</td>
-        <td>1</td>
+        <td>1.0</td>
         <td>mmol/L</td>
         <td>137–144</td>
         <td>137–144</td>
@@ -606,8 +606,8 @@
         <td>ng/dL</td>
         <td>0.0347</td>
         <td>nmol/L</td>
-        <td>male: 9.0–35.0</td>
-        <td>male: 259–1009</td>
+        <td>male: 9.0–35.0 <br> female: 0.5–3.0</td>
+        <td>male: 259–1009 <br> female: 14-86</td>
         <td><input type="number" oninput="convertSIToConventional(this.value, 0.0347, 'conv_value_60')"></td>
         <td id="conv_value_60">0.00</td>
     </tr>
@@ -681,10 +681,10 @@
     <tr>
         <td>troponin I</td>
         <td>ng/mL</td>
-        <td>10</td>
+        <td>10.0</td>
         <td>ng/L</td>
-        <td>male: <34</td>
-        <td>male: <3.4</td>
+        <td>male: <34 <br> female: <16</td>
+        <td>male: <3.4 <br> female: <1.6</td>
         <td><input type="number" oninput="convertSIToConventional(this.value, 10, 'conv_value_68')"></td>
         <td id="conv_value_68">0.00</td>
     </tr>
@@ -692,10 +692,10 @@
     <tr>
         <td>troponin T</td>
         <td>ng/mL</td>
-        <td>10</td>
+        <td>10.0</td>
         <td>ng/L</td>
-        <td>male: <14</td>
-        <td>male: <1.4</td>
+        <td>male: <14 <br> female: <10</td>
+        <td>male: <1.4 <br> female: <1.0</td>
         <td><input type="number" oninput="convertSIToConventional(this.value, 10, 'conv_value_70')"></td>
         <td id="conv_value_70">0.00</td>
     </tr>
@@ -712,7 +712,7 @@
     </tr>
     
     <tr>
-        <td>vitamin B12</td>
+        <td>vitamin B<sub>12</sub></td>
         <td>ng/mL</td>
         <td>1000</td>
         <td>ng/L</td>
