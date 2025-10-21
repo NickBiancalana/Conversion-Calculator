@@ -226,24 +226,32 @@
     <td>
         <input 
             type="number" 
-            oninput="convertSIToConventional(this.value, 0.0259, 'conv_value_18')"
+            oninput="convertSIToConventional(this, 0.0259, 'conv_value_18')"
         >
     </td>
     <td id="conv_value_18">0.0</td>
 </tr>
 
 <script>
-function convertSIToConventional(value, factor, targetId) {
+function convertSIToConventional(input, factor, targetId) {
     const target = document.getElementById(targetId);
-    const num = parseFloat(value);
+    const value = input.value.trim();
 
-    if (value === "" || isNaN(num)) {
-        // If input is empty or invalid, reset to 0.0
+    // If the input is empty, reset to 0.0
+    if (value === "") {
         target.textContent = "0.0";
-    } else {
-        // Convert and display
-        target.textContent = (num / factor).toFixed(2);
+        return;
     }
+
+    const num = parseFloat(value);
+    if (isNaN(num)) {
+        target.textContent = "0.0";
+        return;
+    }
+
+    // Actual conversion
+    const result = num / factor;
+    target.textContent = result.toFixed(2);
 }
 </script>
     
@@ -757,5 +765,6 @@ function convertSIToConventional(value, factor, targetId) {
 
 </body>
 </html>
+
 
 
