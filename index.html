@@ -216,16 +216,36 @@
         <td id="conv_value_17">0.00</td>
     </tr>
     
-    <tr>
-        <td>cholesterol</td>
-        <td>mg/dL</td>
-        <td>0.0259</td>
-        <td>mmol/L</td>
-        <td><5.2</td>
-        <td><201</td>
-        <td><input type="number" oninput="convertSIToConventional(this.value, 0.0259, 'conv_value_18')"></td>
-        <td id="conv_value_18">0.0</td>
-    </tr>
+<tr>
+    <td>cholesterol</td>
+    <td>mg/dL</td>
+    <td>0.0259</td>
+    <td>mmol/L</td>
+    <td><5.2</td>
+    <td><201</td>
+    <td>
+        <input 
+            type="number" 
+            oninput="convertSIToConventional(this.value, 0.0259, 'conv_value_18')"
+        >
+    </td>
+    <td id="conv_value_18">0.0</td>
+</tr>
+
+<script>
+function convertSIToConventional(value, factor, targetId) {
+    const target = document.getElementById(targetId);
+    const num = parseFloat(value);
+
+    if (value === "" || isNaN(num)) {
+        // If input is empty or invalid, reset to 0.0
+        target.textContent = "0.0";
+    } else {
+        // Convert and display
+        target.textContent = (num / factor).toFixed(2);
+    }
+}
+</script>
     
     <tr>
         <td>HDL cholesterol</td>
@@ -737,4 +757,5 @@
 
 </body>
 </html>
+
 
