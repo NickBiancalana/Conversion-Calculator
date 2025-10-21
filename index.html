@@ -726,17 +726,32 @@
 </table>
 
 <script>
-    function convertSIToConventional(siValue, conversionFactor, outputId) {
-        let result = siValue / conversionFactor;
-        if (outputId === 'conv_value_34') {
-            result += 2.15;
-        }
-        document.getElementById(outputId).innerText = result.toFixed(2);
+function convertSIToConventional(siValue, conversionFactor, outputId) {
+    // Calculate the conversion
+    let result = siValue / conversionFactor;
+    if (outputId === 'conv_value_34') {
+        result += 2.15;
     }
-    </script>
+
+    // Find the output element
+    const outputElement = document.getElementById(outputId);
+
+    // Get the original text (e.g., "0", "0.0", or "0.00")
+    const originalText = outputElement.innerText;
+
+    // Detect how many decimal places the original value had
+    const decimalMatch = originalText.match(/\.(\d+)/);
+    const decimalPlaces = decimalMatch ? decimalMatch[1].length : 0;
+
+    // Format the result based on the original decimal places
+    outputElement.innerText = result.toFixed(decimalPlaces);
+}
+</script>
+
 
 </body>
 </html>
+
 
 
 
